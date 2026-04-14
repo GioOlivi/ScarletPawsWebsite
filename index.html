@@ -5,8 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Scarlet Paws | Rutgers Cat Rescue &amp; Welfare Network</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
 <style>
 :root{--red:#CC0033;--red2:#990026;--cream:#FDF6ED;--warm:#FFFAF5;--tan:#E8D5BF;--brown:#8B6347;--dark:#1A0A0A;--mid:#4A2C2C}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:'DM Sans',sans-serif;background:var(--warm);color:var(--dark);overflow-x:hidden}a{text-decoration:none}nav{position:fixed;top:0;left:0;right:0;z-index:100;height:70px;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;background:rgba(253,246,237,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(139,99,71,0.15)}.logo{display:flex;align-items:center;gap:10px}.logo svg{width:40px;height:40px}.logo-text{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--red);line-height:1.1}.logo-sub{display:block;font-size:0.6rem;color:var(--brown);letter-spacing:0.08em;text-transform:uppercase}.nav-links{display:flex;align-items:center;gap:1.8rem;list-style:none}.nav-links a{font-size:0.85rem;font-weight:500;color:var(--mid);transition:color 0.2s}.nav-links a:hover{color:var(--red)}.nav-links .cta{background:var(--red);color:white!important;padding:0.45rem 1.2rem;border-radius:100px}.nav-links .cta:hover{background:var(--red2)!important}.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}.burger span{width:24px;height:2px;background:var(--mid);border-radius:2px;display:block}.mnav{display:none;position:fixed;inset:0;background:var(--cream);z-index:200;flex-direction:column;align-items:center;justify-content:center;gap:2rem}.mnav.open{display:flex}.mnav a{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--dark)}.mnav a:hover{color:var(--red)}.mclose{position:absolute;top:1.5rem;right:1.5rem;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--mid)}.hero{min-height:100vh;padding-top:70px;display:grid;grid-template-columns:1fr 1fr}.hero-l{display:flex;flex-direction:column;justify-content:center;padding:5rem 3rem 5rem 5rem}.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(204,0,51,0.08);border:1px solid rgba(204,0,51,0.2);color:var(--red);padding:0.4rem 1rem;border-radius:100px;font-size:0.75rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;width:fit-content;margin-bottom:1.5rem;animation:fadeUp 0.6s ease both}.badge::before{content:'';width:6px;height:6px;background:var(--red);border-radius:50%;animation:pulse 2s infinite}@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.4)}}.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,5vw,5rem);font-weight:900;line-height:1.05;color:var(--dark);margin-bottom:1.5rem;animation:fadeUp 0.7s 0.1s ease both}.hero h1 em{font-style:italic;color:var(--red)}.hero p{font-size:1rem;line-height:1.75;color:var(--mid);max-width:460px;margin-bottom:2.5rem;font-weight:300;animation:fadeUp 0.7s 0.2s ease both}.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;animation:fadeUp 0.7s 0.3s ease both}.btn-r{background:var(--red);color:white;padding:0.85rem 2rem;border-radius:100px;font-weight:600;font-size:0.9rem;transition:all 0.25s;box-shadow:0 4px 20px rgba(204,0,51,0.3);display:inline-block}.btn-r:hover{background:var(--red2);transform:translateY(-2px)}.btn-o{border:1.5px solid rgba(74,44,44,0.3);color:var(--mid);padding:0.85rem 2rem;border-radius:100px;font-weight:500;font-size:0.9rem;transition:all 0.25s;display:inline-block}.btn-o:hover{border-color:var(--red);color:var(--red);transform:translateY(-2px)}.hero-stats{display:flex;gap:2.5rem;margin-top:3.5rem;padding-top:2.5rem;border-top:1px solid rgba(139,99,71,0.15);animation:fadeUp 0.7s 0.4s ease both}.snum{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:900;color:var(--red);line-height:1}.slbl{font-size:0.75rem;color:var(--brown);font-weight:500;letter-spacing:0.04em;text-transform:uppercase;margin-top:4px}.hero-r{position:relative;overflow:hidden;background:linear-gradient(135deg,#CC0033,#7A001F,#3D000F)}.hero-r .dots{position:absolute;inset:0;opacity:0.06;background-image:radial-gradient(circle,white 1px,transparent 1px);background-size:32px 32px}.hero-r .cat{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}.hero-r .cat svg{width:300px;height:300px;opacity:0.15;animation:float 6s ease-in-out infinite}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}.hero-tag{position:absolute;bottom:3rem;left:3rem;background:rgba(255,255,255,0.12);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.2);padding:1.2rem 1.5rem;border-radius:16px;color:white}.hero-tag p{font-size:0.75rem;opacity:0.75;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:4px}.hero-tag strong{font-family:'Playfair Display',serif;font-size:1.1rem;font-style:italic}@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}.marquee{background:var(--red);padding:0.7rem 0;overflow:hidden;display:flex}.mtrack{display:flex;gap:3rem;white-space:nowrap;animation:scroll 22s linear infinite}.mitem{color:white;font-size:0.78rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;display:flex;align-items:center;gap:1rem}.mitem::after{content:'✦';opacity:0.5}@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}section{padding:6rem 5vw}.stag{font-size:0.7rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--red);margin-bottom:0.8rem;display:flex;align-items:center;gap:8px}.stag::before{content:'';width:20px;height:2px;background:var(--red)}.stag.center{justify-content:center}.stag.center::before{display:none}h2.stitle{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,3.5vw,3rem);font-weight:900;line-height:1.1;color:var(--dark)}h2.stitle em{font-style:italic;color:var(--red)}.about-sec{background:var(--cream);display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}.about-body{font-size:0.98rem;line-height:1.8;color:var(--mid);font-weight:300;margin-top:1.5rem}.about-body p+p{margin-top:1rem}.mcards{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.mc{background:white;border-radius:20px;padding:1.6rem;border:1px solid rgba(139,99,71,0.1);transition:transform 0.3s}.mc:hover{transform:translateY(-4px)}.mc.wide{grid-column:span 2;background:var(--red)}.mc.wide .mct{color:white}.mc.wide .mcd{color:rgba(255,255,255,0.8)}.mc.wide .mci{background:rgba(255,255,255,0.2)}.mci{width:42px;height:42px;background:rgba(204,0,51,0.08);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:0.9rem}.mct{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--dark);margin-bottom:0.4rem}.mcd{font-size:0.83rem;color:var(--mid);line-height:1.6;font-weight:300}.help-sec{background:var(--warm)}.help-hdr{text-align:center;margin-bottom:4rem}.hgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1100px;margin:0 auto}.hc{border-radius:24px;padding:2.5rem 2rem;text-align:center;position:relative;overflow:hidden;transition:transform 0.3s}.hc:hover{transform:translateY(-6px)}.hc.h1{background:linear-gradient(145deg,#CC0033,#7A001F);color:white}.hc.h2{background:var(--cream);border:1.5px solid var(--tan)}.hc.h3{background:var(--dark);color:white}.hc.h4{background:var(--tan)}.hc.h5{background:white;border:1.5px solid var(--tan)}.hc.h6{background:linear-gradient(145deg,#3D000F,#CC0033);color:white}.hnum{font-family:'Playfair Display',serif;font-size:3.5rem;font-weight:900;opacity:0.1;position:absolute;top:1rem;right:1.5rem;line-height:1}.hico{font-size:2.2rem;margin-bottom:1rem}.htit{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;margin-bottom:0.75rem}.hc.h2 .htit,.hc.h4 .htit,.hc.h5 .htit{color:var(--dark)}.htxt{font-size:0.86rem;line-height:1.65;font-weight:300}.hc.h2 .htxt,.hc.h4 .htxt,.hc.h5 .htxt{color:var(--mid)}.hbtn{display:inline-block;margin-top:1.2rem;padding:0.5rem 1.2rem;border-radius:100px;font-size:0.8rem;font-weight:600;transition:all 0.2s}.hc.h1 .hbtn,.hc.h3 .hbtn,.hc.h6 .hbtn{background:rgba(255,255,255,0.2);color:white;border:1px solid rgba(255,255,255,0.3)}.hc.h2 .hbtn,.hc.h4 .hbtn,.hc.h5 .hbtn{background:var(--red);color:white}.hc.h2 .hbtn:hover,.hc.h4 .hbtn:hover,.hc.h5 .hbtn:hover{background:var(--red2)}.tnr-sec{background:var(--dark);color:white;position:relative;overflow:hidden}.tnr-sec::before{content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(204,0,51,0.2),transparent 70%);pointer-events:none}.tnr-in{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;position:relative;z-index:1}.tnr-sec .stag{color:#FF6680}.tnr-sec .stag::before{background:#FF6680}.tnr-sec h2.stitle{color:white}.tnr-body{font-size:0.98rem;line-height:1.8;color:rgba(255,255,255,0.65);font-weight:300;margin-top:1.2rem}.tsteps{display:flex;flex-direction:column;gap:1.2rem;margin-top:2rem}.tstep{display:flex;align-items:flex-start;gap:1rem}.tdot{width:36px;height:36px;background:rgba(204,0,51,0.15);border:1px solid rgba(204,0,51,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Playfair Display',serif;font-weight:700;color:#FF6680;font-size:0.9rem}.tstep h4{font-weight:600;margin-bottom:4px;font-size:0.95rem}.tstep p{font-size:0.82rem;color:rgba(255,255,255,0.5);line-height:1.5}.tstats{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.tsc{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:18px;padding:1.8rem 1.4rem;text-align:center}.tsc.wide{grid-column:span 2;background:rgba(204,0,51,0.12);border-color:rgba(204,0,51,0.2)}.tsn{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:900;color:#FF6680;line-height:1}.tsl{font-size:0.78rem;color:rgba(255,255,255,0.5);margin-top:6px}.adopt-sec{background:var(--cream)}.adopt-hdr{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem;flex-wrap:wrap;gap:1rem}.agrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}.ac{background:white;border-radius:20px;overflow:hidden;border:1px solid rgba(139,99,71,0.1);transition:transform 0.3s,box-shadow 0.3s}.ac:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(139,99,71,0.15)}.ac-img{height:180px;display:flex;align-items:center;justify-content:center;font-size:4rem;position:relative}.ac:nth-child(1) .ac-img{background:linear-gradient(135deg,#f5e6d3,#e8d0b8)}.ac:nth-child(2) .ac-img{background:linear-gradient(135deg,#f0d5d5,#e0c0c0)}.ac:nth-child(3) .ac-img{background:linear-gradient(135deg,#d5e6f0,#c0d8e8)}.ac:nth-child(4) .ac-img{background:linear-gradient(135deg,#d5f0d9,#c0e8c5)}.ac-badge{position:absolute;top:10px;right:10px;background:var(--red);color:white;font-size:0.62rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:3px 10px;border-radius:100px}.ac-body{padding:1.2rem 1.4rem 1.4rem}.ac-name{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--dark);margin-bottom:4px}.ac-meta{font-size:0.76rem;color:var(--brown)}.ac-desc{font-size:0.82rem;color:var(--mid);line-height:1.55;margin:0.6rem 0 1rem;font-weight:300}.ac-link{font-size:0.8rem;font-weight:600;color:var(--red)}.ac-link:hover{color:var(--red2)}.adopt-note{text-align:center;margin-top:2rem;font-size:0.86rem;color:var(--brown)}.adopt-note a{color:var(--red);font-weight:600}.vol-sec{background:var(--warm);display:grid;grid-template-columns:1fr 1.2fr;gap:5rem;align-items:center}.vperks{margin-top:2.5rem;display:flex;flex-direction:column;gap:1rem}.vperk{display:flex;align-items:center;gap:12px;font-size:0.9rem;color:var(--mid)}.vpico{width:36px;height:36px;background:rgba(204,0,51,0.07);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}.vcard{background:white;border-radius:28px;padding:3rem 2.5rem;border:1.5px solid var(--tan);box-shadow:0 8px 40px rgba(139,99,71,0.07);text-align:center}.vcard-ico{font-size:3.5rem;margin-bottom:1rem}.vcard-title{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:var(--dark);margin-bottom:0.5rem}.vcard-sub{font-size:0.92rem;color:var(--brown);margin-bottom:2rem;max-width:320px;margin-left:auto;margin-right:auto}.vcard-note{font-size:0.76rem;color:var(--brown);margin-top:1.2rem}.donate-sec{background:linear-gradient(135deg,#CC0033,#7A001F,#3D000F);color:white;text-align:center;padding:7rem 5vw;position:relative;overflow:hidden}.donate-sec::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,0.07) 1px,transparent 1px);background-size:40px 40px;pointer-events:none}.donate-in{position:relative;z-index:1;max-width:650px;margin:0 auto}.donate-sec .stag{color:rgba(255,255,255,0.6);justify-content:center}.donate-sec .stag::before{display:none}.donate-sec h2.stitle{color:white;margin-bottom:1rem}.donate-body{font-size:1rem;line-height:1.7;color:rgba(255,255,255,0.7);font-weight:300;margin-bottom:2.5rem}.donate-btn{display:inline-flex;align-items:center;gap:8px;background:white;color:var(--red);padding:1rem 2.5rem;border-radius:100px;font-size:1rem;font-weight:700;transition:all 0.25s;box-shadow:0 8px 30px rgba(0,0,0,0.2)}.donate-btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(0,0,0,0.3)}.donate-tax{font-size:0.76rem;color:rgba(255,255,255,0.5);margin-top:1.2rem}.social-sec{background:var(--cream);text-align:center;padding:5rem 5vw}.social-sec h3{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;margin-bottom:0.5rem}.social-sub{font-size:0.9rem;color:var(--brown);margin-bottom:2.5rem}.slinks{display:flex;justify-content:center;gap:1.2rem;flex-wrap:wrap}.slink{display:inline-flex;align-items:center;gap:10px;padding:0.85rem 1.8rem;border-radius:14px;font-weight:600;font-size:0.9rem;transition:all 0.25s;color:white}.slink:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,0.15)}.sl-ig{background:linear-gradient(135deg,#E1306C,#833AB4,#F77737)}.sl-tt{background:#000}.sl-pf{background:#1e73be}.contact-sec{background:var(--warm);padding:6rem 5vw}.contact-in{max-width:700px;margin:0 auto}.contact-title{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;margin-bottom:1rem}.contact-desc{font-size:0.95rem;color:var(--mid);line-height:1.7;font-weight:300;margin-bottom:2.5rem}.citems{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}.ci{display:flex;align-items:flex-start;gap:12px}.ci-ico{width:40px;height:40px;background:rgba(204,0,51,0.08);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;margin-top:2px}.ci-lbl{font-size:0.7rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--brown)}.ci-val{font-size:0.9rem;color:var(--dark);margin-top:2px}.ci-val a{color:var(--red)}footer{background:var(--dark);color:rgba(255,255,255,0.6);padding:4rem 5vw 2rem}.ft{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,0.08)}.ft-brand-name{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:white}.ft-brand-sub{font-size:0.6rem;color:rgba(255,255,255,0.4);letter-spacing:0.08em;text-transform:uppercase;display:block}.ft-desc{font-size:0.83rem;line-height:1.7;margin-top:1rem;max-width:260px}.ft-social{margin-top:1.2rem;display:flex;gap:0.8rem;flex-wrap:wrap}.ft-social a{color:rgba(255,255,255,0.5);font-size:0.78rem;background:rgba(255,255,255,0.07);padding:5px 14px;border-radius:100px;transition:color 0.2s}.ft-social a:hover{color:white}.fc h4{font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:white;margin-bottom:1.2rem}.fc a{display:block;font-size:0.83rem;color:rgba(255,255,255,0.5);margin-bottom:0.65rem;transition:color 0.2s}.fc a:hover{color:rgba(255,255,255,0.9)}.fb{display:flex;justify-content:space-between;align-items:center;padding-top:2rem;font-size:0.76rem;flex-wrap:wrap;gap:1rem}.fb a{color:rgba(255,255,255,0.4)}.fb a:hover{color:white}.tax{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);padding:4px 12px;border-radius:100px;font-size:0.7rem}.rv{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease}.rv.on{opacity:1;transform:translateY(0)}@media(max-width:900px){.hero{grid-template-columns:1fr}.hero-r{height:280px}.hero-l{padding:3rem 2rem}.about-sec{grid-template-columns:1fr;gap:3rem}.hgrid{grid-template-columns:1fr 1fr}.tnr-in{grid-template-columns:1fr;gap:3rem}.tstats{display:none}.agrid{grid-template-columns:1fr 1fr}.vol-sec{grid-template-columns:1fr;gap:3rem}.citems{grid-template-columns:1fr}.ft{grid-template-columns:1fr 1fr;gap:2rem}.nav-links{display:none}.burger{display:flex}section{padding:4rem 1.5rem}}@media(max-width:600px){.hgrid{grid-template-columns:1fr}.agrid{grid-template-columns:1fr}.mcards{grid-template-columns:1fr}.mc.wide{grid-column:span 1}.hero-stats{gap:1.5rem}.ft{grid-template-columns:1fr}.citems{grid-template-columns:1fr}}
+</style>
+<style>
+.sightings-sec{background:linear-gradient(180deg,#fff7ee 0%,#f8ecde 100%);padding:6rem 5vw 5rem}.sightings-top{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(320px,.9fr);gap:2rem;align-items:end;margin-bottom:2rem}.sightings-body{font-size:.98rem;line-height:1.8;color:var(--mid);font-weight:300;max-width:760px}.sightings-body strong{color:var(--red)}.sightings-note{margin-top:1rem;font-size:.8rem;color:var(--brown)}.sightings-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}.sstat{background:white;border:1px solid rgba(139,99,71,.12);border-radius:20px;padding:1.2rem 1rem;box-shadow:0 18px 40px rgba(95,49,28,.08)}.sstat-num{font-family:'Playfair Display',serif;font-size:2rem;line-height:1;color:var(--red);font-weight:900}.sstat-lbl{margin-top:.4rem;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--brown);font-weight:600}.map-shell{background:rgba(255,255,255,.72);border:1px solid rgba(139,99,71,.14);border-radius:30px;padding:1.2rem;box-shadow:0 20px 50px rgba(74,44,44,.08)}.map-frame{border-radius:22px;overflow:hidden;border:1px solid rgba(139,99,71,.12);background:#f7efe6}#sightings-map{height:500px;width:100%}.map-caption{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding:.9rem .2rem 0}.map-caption p{font-size:.82rem;color:var(--brown)}.spot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.5rem}.spot-card{background:white;border-radius:20px;padding:1.1rem 1rem;border:1px solid rgba(139,99,71,.1)}.spot-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark)}.spot-meta{margin-top:.35rem;font-size:.82rem;color:var(--brown)}.spot-cats{margin-top:.75rem;font-size:.82rem;line-height:1.6;color:var(--mid)}.spot-cats strong{color:var(--red);font-weight:700}.leaflet-container{font-family:'DM Sans',sans-serif}.leaflet-popup-content-wrapper{border-radius:16px}.leaflet-popup-content{margin:14px 16px;line-height:1.6;color:var(--mid)}.leaflet-popup-content strong{display:block;font-family:'Playfair Display',serif;font-size:1rem;color:var(--dark);margin-bottom:.25rem}.map-fallback{display:none;padding:1rem 1.2rem 0;font-size:.85rem;color:var(--brown)}.report-cta{display:flex;align-items:center;justify-content:space-between;gap:1rem;background:rgba(204,0,51,0.05);border:1px solid rgba(204,0,51,0.15);border-radius:16px;padding:1.2rem 1.5rem;margin-top:1.2rem;flex-wrap:wrap}.report-cta-text strong{font-size:.95rem;color:var(--dark);display:block;margin-bottom:3px}.report-cta-text p{font-size:.82rem;color:var(--mid);margin:0}.report-cta .btn-r{white-space:nowrap;font-size:.85rem;padding:.7rem 1.5rem}.spot-card--community{border-color:rgba(255,140,66,0.35)}.spot-card--community .spot-meta{color:#d4700a}.spot-card--community .spot-title::after{content:' · Community';font-size:.7rem;font-weight:600;color:#d4700a;font-family:'DM Sans',sans-serif}.map-loading{display:flex;align-items:center;justify-content:center;gap:.5rem;padding:.6rem 1rem;font-size:.8rem;color:var(--brown)}.map-loading::before{content:'';width:12px;height:12px;border:2px solid var(--tan);border-top-color:var(--red);border-radius:50%;animation:spin .7s linear infinite;flex-shrink:0}@keyframes spin{to{transform:rotate(360deg)}}@media(max-width:900px){.sightings-top{grid-template-columns:1fr}.sightings-stats{grid-template-columns:repeat(3,1fr)}.spot-grid{grid-template-columns:1fr 1fr}#sightings-map{height:420px}.report-cta{flex-direction:column;align-items:flex-start}}@media(max-width:600px){.sightings-sec{padding:4rem 1.5rem}.sightings-stats{grid-template-columns:1fr}.spot-grid{grid-template-columns:1fr}#sightings-map{height:360px}}
 </style>
 </head>
 <body>
@@ -17,6 +21,7 @@
 <a href="#help" onclick="document.getElementById('mnav').classList.remove('open')">Get Involved</a>
 <a href="#tnr" onclick="document.getElementById('mnav').classList.remove('open')">TNR Program</a>
 <a href="#adopt" onclick="document.getElementById('mnav').classList.remove('open')">Adopt</a>
+<a href="#sightings" onclick="document.getElementById('mnav').classList.remove('open')">Sightings</a>
 <a href="#volunteer" onclick="document.getElementById('mnav').classList.remove('open')">Volunteer</a>
 <a href="#contact" onclick="document.getElementById('mnav').classList.remove('open')">Contact</a>
 </div>
@@ -52,6 +57,7 @@
 <li><a href="#tnr">TNR Program</a></li>
 <li><a href="#adopt">Adopt</a></li>
 <li><a href="#volunteer">Volunteer</a></li>
+<li><a href="#sightings">Sightings</a></li>
 <li><a href="#donate" class="cta">Donate</a></li>
 </ul>
 <button class="burger" onclick="document.getElementById('mnav').classList.add('open')">
@@ -324,6 +330,81 @@
 <p class="adopt-note">All Rutgers-rescued cats on <a href="https://www.petfinder.com/member/us/nj/plainsboro/scarlet-paws-animal-welfare-network-nj749/" target="_blank">Petfinder</a> · Questions? <a href="mailto:scarletpaws@outlook.com">scarletpaws@outlook.com</a></p>
 </section>
 
+<section class="sightings-sec" id="sightings">
+<div class="sightings-top">
+<div class="rv">
+<div class="stag">Sighting Heatmap</div>
+<h2 class="stitle">Where Scarlet Paws has been <em>finding cats</em> in New Brunswick.</h2>
+<p class="sightings-body">This heatmap uses the rescue-location entries from the provided tracker workbook and focuses only on the <strong>New Brunswick area</strong>. Each hotspot represents where cats or kittens were logged in the spreadsheet, with heavier glow showing denser clusters of sightings.</p>
+<p class="sightings-note">Source: <em>Cat_Kitten Status Tracker-2.xlsx</em>. New Brunswick map includes Easton Ave, Mine Street, Stone Street, College Ave, and Rutgers Boatyard entries. Piscataway and Busch records were excluded.</p>
+</div>
+<div class="sightings-stats rv">
+<div class="sstat">
+<div class="sstat-num">22</div>
+<div class="sstat-lbl">New Brunswick Sightings</div>
+</div>
+<div class="sstat">
+<div class="sstat-num">6</div>
+<div class="sstat-lbl">Mapped Hotspots</div>
+</div>
+<div class="sstat">
+<div class="sstat-num">9</div>
+<div class="sstat-lbl">Largest Cluster on Mine St</div>
+</div>
+</div>
+</div>
+<div class="map-shell rv">
+<div class="map-frame">
+<div id="sightings-map" aria-label="Heatmap of Scarlet Paws cat sightings in New Brunswick"></div>
+</div>
+<div class="map-caption">
+<p>Tip: drag to explore the map and click a hotspot marker for the cats logged there.</p>
+<p>Heat intensity is weighted by how many cats were recorded at each location.</p>
+</div>
+<div class="report-cta">
+<div class="report-cta-text">
+<strong>Spotted a stray near campus?</strong>
+<p>Submit a sighting and our team will review it before adding it to the map.</p>
+</div>
+<a href="YOUR_GOOGLE_FORM_URL_HERE" target="_blank" class="btn-r" id="report-btn">Report a Sighting →</a>
+</div>
+<div class="map-loading" id="map-loading" style="display:none">Loading community sightings…</div>
+<div class="map-fallback" id="map-fallback">The interactive map could not load. If you are offline, reconnect to the internet and refresh to load the map tiles and heat layer.</div>
+</div>
+<div class="spot-grid rv">
+<div class="spot-card">
+<div class="spot-title">13 Mine Street</div>
+<div class="spot-meta">9 logged cats</div>
+<div class="spot-cats"><strong>Names:</strong> Spiderman, Ash, Poke, Mezcal, Baby #3, Baby #4, Copurrrnicus, Loki, Thor</div>
+</div>
+<div class="spot-card">
+<div class="spot-title">11 Mine Street</div>
+<div class="spot-meta">6 logged cats</div>
+<div class="spot-cats"><strong>Names:</strong> Cali, Lollie, Baby #1, Baby #2, Baby #3, Baby #4</div>
+</div>
+<div class="spot-card">
+<div class="spot-title">139 Easton Ave</div>
+<div class="spot-meta">4 logged cats</div>
+<div class="spot-cats"><strong>Names:</strong> Salt, Pepper, Snowball, Poo</div>
+</div>
+<div class="spot-card">
+<div class="spot-title">19 Stone Street</div>
+<div class="spot-meta">1 logged cat</div>
+<div class="spot-cats"><strong>Name:</strong> Luna</div>
+</div>
+<div class="spot-card">
+<div class="spot-title">Rutgers Boatyard</div>
+<div class="spot-meta">1 logged cat</div>
+<div class="spot-cats"><strong>Name:</strong> Spicy</div>
+</div>
+<div class="spot-card">
+<div class="spot-title">College Ave</div>
+<div class="spot-meta">1 logged cat</div>
+<div class="spot-cats"><strong>Name:</strong> Simon</div>
+</div>
+</div>
+</section>
+
 <section class="vol-sec" id="volunteer">
 <div class="rv">
 <div class="stag">Join Our Team</div>
@@ -448,8 +529,107 @@
 </div>
 </footer>
 
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
 <script>
-var obs=new IntersectionObserver(function(e){e.forEach(function(t){t.isIntersecting&&t.target.classList.add('on')})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.rv').forEach(function(e){obs.observe(e)});window.addEventListener('scroll',function(){document.getElementById('mainnav').style.boxShadow=window.scrollY>30?'0 4px 30px rgba(139,99,71,0.12)':'none'});
+// ─── Configuration ───────────────────────────────────────────────────────────
+// Step 1: Paste your deployed Apps Script URL here after setup
+var APPS_SCRIPT_URL = 'YOUR_APPS_SCRIPT_URL_HERE';
+// Step 2: Paste your Google Form URL here after setup
+var GOOGLE_FORM_URL = 'YOUR_GOOGLE_FORM_URL_HERE';
+// ─────────────────────────────────────────────────────────────────────────────
+
+// Verified hardcoded sightings (always shown)
+var sightingsData=[
+  {name:'139 Easton Ave',coords:[40.4995,-74.448],count:4,cats:['Salt','Pepper','Snowball','Poo']},
+  {name:'19 Stone Street',coords:[40.4978,-74.4512],count:1,cats:['Luna']},
+  {name:'13 Mine Street',coords:[40.496,-74.4464],count:9,cats:['Spiderman','Ash','Poke','Mezcal','Baby #3','Baby #4','Copurrrnicus','Loki','Thor']},
+  {name:'11 Mine Street',coords:[40.4958,-74.4466],count:6,cats:['Cali','Lollie','Baby #1','Baby #2','Baby #3','Baby #4']},
+  {name:'Rutgers Boatyard',coords:[40.4968,-74.434],count:1,cats:['Spicy']},
+  {name:'College Ave',coords:[40.5037,-74.4521],count:1,cats:['Simon']}
+];
+
+// Wire up the Report button
+var reportBtn = document.getElementById('report-btn');
+if (reportBtn && GOOGLE_FORM_URL !== 'YOUR_GOOGLE_FORM_URL_HERE') {
+  reportBtn.href = GOOGLE_FORM_URL;
+} else if (reportBtn) {
+  reportBtn.style.opacity = '0.5';
+  reportBtn.style.pointerEvents = 'none';
+  reportBtn.title = 'Form not configured yet';
+}
+
+function buildMap(communitySpots) {
+  var allSpots = sightingsData.concat(communitySpots || []);
+  var maxCount = Math.max.apply(null, allSpots.map(function(s){return s.count;}));
+
+  // Update stats dynamically
+  var totalCats = allSpots.reduce(function(sum, s){return sum + s.count;}, 0);
+  var statNums = document.querySelectorAll('.sstat-num');
+  if (statNums[0]) statNums[0].textContent = totalCats;
+  if (statNums[1]) statNums[1].textContent = allSpots.length;
+
+  // Append approved community spots to the spot grid
+  if (communitySpots && communitySpots.length > 0) {
+    var grid = document.querySelector('.spot-grid');
+    communitySpots.forEach(function(spot) {
+      var card = document.createElement('div');
+      card.className = 'spot-card spot-card--community';
+      var catsHtml = spot.cats && spot.cats.length ? '<div class="spot-cats">' + spot.cats.join(', ') + '</div>' : '';
+      card.innerHTML = '<div class="spot-title">' + spot.name + '</div>'
+        + '<div class="spot-meta">' + spot.count + ' logged cat' + (spot.count !== 1 ? 's' : '') + '</div>'
+        + catsHtml;
+      grid.appendChild(card);
+    });
+  }
+
+  if (!window.L || typeof L.heatLayer !== 'function') {
+    document.getElementById('map-fallback').style.display = 'block';
+    return;
+  }
+
+  var sightingsMap = L.map('sightings-map', {scrollWheelZoom:false}).setView([40.4992,-74.4468], 15);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom:19, attribution:'&copy; OpenStreetMap contributors'}).addTo(sightingsMap);
+
+  L.heatLayer(allSpots.map(function(spot){
+    return [spot.coords[0], spot.coords[1], Math.max(0.35, spot.count / maxCount)];
+  }), {radius:35, blur:28, maxZoom:17, gradient:{0.2:'#ffd166', 0.45:'#ff8c42', 0.7:'#ef476f', 1:'#cc0033'}}).addTo(sightingsMap);
+
+  // Red marker = verified original · Orange marker = approved community report
+  var verifiedIcon = L.divIcon({className:'', html:'<div style="width:14px;height:14px;background:#cc0033;border:3px solid rgba(255,255,255,0.92);border-radius:50%;box-shadow:0 0 0 8px rgba(204,0,51,0.12);"></div>', iconSize:[20,20], iconAnchor:[10,10]});
+  var communityIcon = L.divIcon({className:'', html:'<div style="width:14px;height:14px;background:#d4700a;border:3px solid rgba(255,255,255,0.92);border-radius:50%;box-shadow:0 0 0 8px rgba(212,112,10,0.15);"></div>', iconSize:[20,20], iconAnchor:[10,10]});
+
+  allSpots.forEach(function(spot) {
+    var icon = spot.source === 'community' ? communityIcon : verifiedIcon;
+    var badge = spot.source === 'community' ? ' <span style="font-size:0.68rem;background:#d4700a;color:white;padding:1px 6px;border-radius:4px;vertical-align:middle;">Community</span>' : '';
+    L.marker(spot.coords, {icon:icon}).addTo(sightingsMap)
+      .bindPopup('<strong>' + spot.name + '</strong>' + badge + '<br/>'
+        + spot.count + ' logged cat' + (spot.count !== 1 ? 's' : '') + '<br/>'
+        + (spot.cats ? spot.cats.join(', ') : ''));
+  });
+}
+
+// Fetch approved community sightings from Apps Script, then build the map
+if (APPS_SCRIPT_URL !== 'YOUR_APPS_SCRIPT_URL_HERE') {
+  document.getElementById('map-loading').style.display = 'flex';
+  fetch(APPS_SCRIPT_URL)
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      document.getElementById('map-loading').style.display = 'none';
+      buildMap(Array.isArray(data) ? data : []);
+    })
+    .catch(function() {
+      document.getElementById('map-loading').style.display = 'none';
+      buildMap([]);
+    });
+} else {
+  buildMap([]);
+}
+
+// Scroll animations & nav shadow
+var obs = new IntersectionObserver(function(e){e.forEach(function(t){t.isIntersecting&&t.target.classList.add('on')});}, {threshold:0.1, rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.rv').forEach(function(e){obs.observe(e);});
+window.addEventListener('scroll', function(){document.getElementById('mainnav').style.boxShadow=window.scrollY>30?'0 4px 30px rgba(139,99,71,0.12)':'none';});
 </script>
 </body>
 </html>

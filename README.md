@@ -4,8 +4,7 @@ Website developed for Scarlet Paws, a Rutgers Enactus social-impact project.
 
 ## About the Project
 
-Scarlet Paws is a Rutgers Enactus project focused on [PUT A 1–2 SENTENCE
-EXPLANATION OF WHAT SCARLET PAWS ACTUALLY DOES HERE].
+Scarlet Paws is a Rutgers Enactus project focused on reducing the stray cat population and supporting local animal welfare.
 
 I developed this website to give the project an online presence and provide
 visitors with information about its mission, initiatives, and impact.
@@ -20,7 +19,8 @@ visitors with information about its mission, initiatives, and impact.
 - Information about Scarlet Paws and its mission
 - Interactive navigation
 - Mobile-friendly layout
-- [ADD 1–2 OTHER REAL FEATURES]
+- Cat sightings that can be reported by students through a google form
+- Active heat map with sighting reports
 
 ## Technologies
 
@@ -30,7 +30,7 @@ visitors with information about its mission, initiatives, and impact.
 
 ## Impact
 
-- Generated 1,000+ website visits [ONLY INCLUDE THIS IF YOU CAN VERIFY IT]
+- Generated 1,000+ website visits
 - Created a centralized online presence for the Scarlet Paws project
 - Used by Rutgers Enactus to communicate the project's mission and initiatives
 

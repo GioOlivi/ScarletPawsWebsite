@@ -11,7 +11,7 @@ visitors with information about its mission, initiatives, and impact.
 
 ## Live Website
 
-[Visit the Scarlet Paws Website](PUT YOUR LIVE URL HERE)
+[Visit the Scarlet Paws Website]
 
 ## Features
 
